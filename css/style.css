@@ -1,0 +1,119 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Lexend;
+    color: rgb(255, 255, 255);
+    background-color: #1c1b29; /* Dark purple background */
+    background: radial-gradient(circle at center, #1c1b29 0%, #0d0b19 100%); /* Space-like effect */
+}
+
+/* Container layout: two equal columns */
+.container {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+}
+
+.sidebar {
+    width: 50%;
+    padding: 5% 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;  /* Center vertically */
+    align-items: flex-start;      /* Center horizontally */
+    position: fixed;
+    height: 100%;
+    text-align: left;        /* Align text to center */
+    background: none; /* Share the same background as the body */
+}
+
+.sidebar h1 {
+    font-size: 2.7rem;
+    margin-bottom: 2%;  /* Reduce spacing between heading and paragraph */
+    text-align: left; /* Align text to the left */
+}
+
+.sidebar p {
+    font-size: 1.2rem;
+    margin-bottom: 10%;  /* Reduce spacing under the description */
+    text-align: left; /* Align text to the left */    
+}
+
+.sidebar .navigation ul {
+    list-style-type: none;
+    margin: 20px 0;  /* Reduce the spacing around the nav items */
+    text-align: left; /* Align text to the left */
+}
+
+.sidebar .navigation ul li {
+    margin: 10% 0;  /* Reduce space between navigation links */
+    text-align: left; /* Align text to the left */
+}
+
+.sidebar .navigation ul li a {
+    color: #606060;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.sidebar .navigation ul li a:hover {
+    color: #c0a0dd; /* Light purple on hover */
+}
+
+/* Social media icons */
+.sidebar .social-media a {
+    margin-right: 10px;  /* Reduce space between icons */
+}
+
+.sidebar .social-media {
+    margin-top: 20%;  /* Adjust spacing from the nav links to the icons */
+}
+
+.sidebar .social-media i {
+    color: #9d9d9d;
+    transition: color 0.3s ease;
+}
+
+.sidebar .social-media i:hover {
+    color: #dda0dd; /* Light purple on hover */
+}
+
+/* Content: scrollable right part */
+.content {
+    width: 50%; /* Content takes up the remaining 50% of the screen width */
+    margin-left: 50%; /* Offset the content to the right */
+    padding: 40px 20px;
+    height: 100%;
+    overflow-y: scroll;
+    text-align: justify;
+    background: none; /* Share the same background as the body */
+}
+
+.content section {
+    margin-bottom: 60px;
+}
+
+.content section h2 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.content section p, 
+.content article {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.content article h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #dda0dd; /* Light purple for headings */
+}
