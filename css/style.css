@@ -28,7 +28,7 @@
 body,
 html {
     height: 100%;
-    font-family: Lexend;
+    font-family: Verdana;
     color: rgb(255, 255, 255);
     background-color: var(--background-main-color);
     scroll-behavior: smooth;
@@ -70,12 +70,6 @@ html {
 .sidebar p {
     font-size: 1.2rem;
     margin-bottom: 10%;
-    text-align: left;
-    color: var(--sidebar-text-color);
-}
-
-.sidebar em {
-    font-size: 1.4rem;
     text-align: left;
     color: var(--sidebar-text-color);
 }
@@ -215,7 +209,6 @@ html {
     filter: blur(15px);
     mix-blend-mode: screen;
     transform: translate(-50%, -50%);
-    /* Make sure it is above all content */
     z-index: 9999;
 }
 

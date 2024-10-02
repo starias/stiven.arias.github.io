@@ -1,4 +1,3 @@
-// Get all the sections and navigation links
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".navigation ul li a");
 const nSections = 3
