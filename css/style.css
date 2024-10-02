@@ -5,94 +5,165 @@
     box-sizing: border-box;
 }
 
-body, html {
+:root {
+    /*Left Layout*/
+    --sidebar-h1-color: #fff;
+    --sidebar-text-color: #d7d7d7;
+    --sidebar-text-hover-color: #ffffff;
+    /*Bacground Colors*/
+    --background-main-color: #1c1b29;
+    --background-gradient-color: #0d0b19;
+    /*Navigator Colors*/
+    --navigator-normal-color: #a4a4a4;
+    --navigator-hightlighted-color: #ffffff;
+    /*Social Media Colors*/
+    --social-media-normal-color: #9d9d9d;
+    --social-media-hover-color: #ffffff;
+    /*Right Layout*/
+    --content-section-h2-color: #fff;
+    --content-section-p-color: #cfcfcf;
+    --content-article-h3-color: #dda0dd;
+}
+
+body,
+html {
     height: 100%;
     font-family: Lexend;
     color: rgb(255, 255, 255);
-    background-color: #1c1b29; /* Dark purple background */
-    background: radial-gradient(circle at center, #1c1b29 0%, #0d0b19 100%); /* Space-like effect */
+    background-color: var(--background-main-color);
+    scroll-behavior: smooth;
+    /* Space-like effect */
+    background: radial-gradient(circle at center, var(--background-main-color)0%, var(--background-gradient-color)100%);
 }
 
 /* Container layout: two equal columns */
 .container {
     display: flex;
-    height: 100vh; /* Full viewport height */
+    /* Full viewport height */
+    height: 100vh;
 }
 
+/*****************************************************/
+
+/*Left Layout*/
 .sidebar {
     width: 50%;
     padding: 5% 5%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;  /* Center vertically */
-    align-items: flex-start;      /* Center horizontally */
+    /* Center vertically */
+    justify-content: flex-start;
+    /* Center horizontally */
+    align-items: flex-start;
     position: fixed;
     height: 100%;
-    text-align: left;        /* Align text to center */
-    background: none; /* Share the same background as the body */
+    text-align: left;
 }
 
 .sidebar h1 {
     font-size: 2.7rem;
-    margin-bottom: 2%;  /* Reduce spacing between heading and paragraph */
-    text-align: left; /* Align text to the left */
+    margin-bottom: 2%;
+    text-align: left;
+    color: var(--sidebar-h1-color);
 }
 
 .sidebar p {
     font-size: 1.2rem;
-    margin-bottom: 10%;  /* Reduce spacing under the description */
-    text-align: left; /* Align text to the left */    
+    margin-bottom: 10%;
+    text-align: left;
+    color: var(--sidebar-text-color);
 }
+
+.sidebar em {
+    font-size: 1.2rem;
+    text-align: left;
+    color: var(--sidebar-text-color);
+}
+
+.sidebar em:hover {
+    color: var(--sidebar-text-hover-color);
+}
+
+/*****************************************************/
 
 .sidebar .navigation ul {
     list-style-type: none;
-    margin: 20px 0;  /* Reduce the spacing around the nav items */
-    text-align: left; /* Align text to the left */
+    margin: 20px 0;
+    text-align: left;
 }
 
 .sidebar .navigation ul li {
-    margin: 10% 0;  /* Reduce space between navigation links */
-    text-align: left; /* Align text to the left */
+    margin: 10% 0;
+    text-align: left;
 }
 
 .sidebar .navigation ul li a {
-    color: #606060;
+    color: var(--navigator-normal-color);
     text-decoration: none;
-    font-size: 1.2rem;
-    transition: color 0.3s ease;
+    font-size: .9rem;
+    transition: color 0.1s ease, padding-left 0.1s ease;
+    position: relative;
+    padding-left: 20px;
 }
 
-.sidebar .navigation ul li a:hover {
-    color: #c0a0dd; /* Light purple on hover */
+/*Short line before the text when it is not highlighted*/
+.sidebar .navigation ul li a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 2px;
+    background-color: var(--navigator-normal-color);
+    transition: width 0.1s ease;
 }
+
+/*Long line before the text when it is highlighted*/
+.sidebar .navigation ul li a.active::before,
+.sidebar .navigation ul li a:hover::before {
+    width: 40px;
+    background-color: var(--navigator-hightlighted-color);
+    font-weight: bold;
+}
+
+/*Color and padding of the text when it is highlighted*/
+.sidebar .navigation ul li a.active,
+.sidebar .navigation ul li a:hover {
+    color: var(--navigator-hightlighted-color);
+    padding-left: 50px;
+}
+
+/*****************************************************/
 
 /* Social media icons */
-.sidebar .social-media a {
-    margin-right: 10px;  /* Reduce space between icons */
+.sidebar .social-media {
+    margin-top: 20%;
 }
 
-.sidebar .social-media {
-    margin-top: 20%;  /* Adjust spacing from the nav links to the icons */
+.sidebar .social-media a {
+    margin-right: 5px;
+    text-decoration: none;
 }
 
 .sidebar .social-media i {
-    color: #9d9d9d;
-    transition: color 0.3s ease;
+    color: var(--social-media-normal-color);
+    transition: color 0.1s ease;
 }
 
 .sidebar .social-media i:hover {
-    color: #dda0dd; /* Light purple on hover */
+    color: var(--social-media-hover-color);
 }
+
+/*****************************************************/
 
 /* Content: scrollable right part */
 .content {
-    width: 50%; /* Content takes up the remaining 50% of the screen width */
-    margin-left: 50%; /* Offset the content to the right */
+    width: 40%;
+    margin-left: 50%;
     padding: 40px 20px;
     height: 100%;
-    overflow-y: scroll;
     text-align: justify;
-    background: none; /* Share the same background as the body */
 }
 
 .content section {
@@ -101,11 +172,18 @@ body, html {
 
 .content section h2 {
     font-size: 2rem;
-    color: #fff;
+    color: var(--content-section-h2-color);
     margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgb(0, 0, 0);
 }
 
-.content section p, 
+.content section p {
+    font-size: .9rem;
+    line-height: 1.6;
+    color: var(--content-section-p-color);
+    text-shadow: 1px 1px 2px rgb(0, 0, 0, 1);
+}
+
 .content article {
     font-size: 1.1rem;
     line-height: 1.6;
@@ -115,5 +193,27 @@ body, html {
 .content article h3 {
     font-size: 1.5rem;
     margin-bottom: 10px;
-    color: #dda0dd; /* Light purple for headings */
+    color: var(--content-article-h3-color);
+}
+
+.content article li {
+    font-size: .9rem;
+    line-height: 1.6;
+    color: var(--content-section-p-color);
+    text-shadow: 1px 1px 2px rgb(0, 0, 0, 1);
+}
+
+/* Lantern effect */
+#lantern {
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    pointer-events: none;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.025), rgba(0, 0, 0, 0));
+    filter: blur(15px);
+    mix-blend-mode: screen;
+    transform: translate(-50%, -50%);
+    /* Make sure it is above all content */
+    z-index: 9999;
 }
