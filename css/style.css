@@ -75,7 +75,7 @@ html {
 }
 
 .sidebar em {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     text-align: left;
     color: var(--sidebar-text-color);
 }
@@ -139,6 +139,7 @@ html {
 /* Social media icons */
 .sidebar .social-media {
     margin-top: 20%;
+    font-size: 3rem;
 }
 
 .sidebar .social-media a {
@@ -216,4 +217,74 @@ html {
     transform: translate(-50%, -50%);
     /* Make sure it is above all content */
     z-index: 9999;
+}
+
+/* Media query for small screens */
+@media (max-width: 768px) {
+    :root {
+        --sidebar-h1-size: 2rem;
+        --general-padding: 1.7rem;
+    }
+
+    .container {
+        /*Replace flex dislpay by block display*/
+        display: block;
+    }
+
+    /*SideBar layout*/
+    .sidebar {
+        width: 100%;
+        padding: var(--general-padding);
+        height: auto;
+        position: static;
+    }
+
+    /* Hide navigation buttons */
+    .sidebar .navigation {
+        display: none;
+    }
+
+    .sidebar h1 {
+        font-size: var(--sidebar-h1-size);
+    }
+
+    .sidebar p,
+    .sidebar em {
+        font-size: 1.4rem;
+    }
+
+    .sidebar .social-media {
+        align-self: left;
+        margin-top: 1%;
+        font-size: 2.5rem;
+    }
+
+    .content {
+        width: 100%;
+        margin-left: 0;
+        padding: var(--general-padding);
+        text-align: justify;
+    }
+
+    .content section h2 {
+        font-size: 1.7rem;
+    }
+
+    .content section p,
+    .content article li {
+        font-size: 1.2rem;
+    }
+
+    .content article h3 {
+        font-size: 1.4rem;
+    }
+
+    .content article li {
+        font-size: 1.2rem;
+    }
+
+    #lantern
+    {
+        display: none;
+    }
 }
