@@ -8,6 +8,7 @@
 :root {
     /*Left Layout*/
     --sidebar-h1-color: #fff;
+    --sidebar-h2-color: #dadada;
     --sidebar-text-color: #d7d7d7;
     --sidebar-text-hover-color: #ffffff;
     /*Bacground Colors*/
@@ -67,7 +68,15 @@ html {
     color: var(--sidebar-h1-color);
 }
 
+.sidebar h2 {
+    font-size: 1.2rem;
+    margin-bottom: 2%;
+    text-align: left;
+    color: var(--sidebar-h2-color);
+}
+
 .sidebar p {
+    font-family: Lexend;
     font-size: 1.2rem;
     margin-bottom: 10%;
     text-align: left;
@@ -156,13 +165,12 @@ html {
 .content {
     width: 40%;
     margin-left: 50%;
-    padding: 40px 20px;
     height: 100%;
     text-align: justify;
 }
 
 .content section {
-    margin-bottom: 60px;
+    padding: 7.5% 0% 7.5% 0%;
 }
 
 .content section h2 {
@@ -170,12 +178,23 @@ html {
     color: var(--content-section-h2-color);
     margin-bottom: 20px;
     text-shadow: 1px 1px 2px rgb(0, 0, 0);
+    display: none;
 }
 
 .content section p {
+    font-family: Lexend;
     font-size: .9rem;
     line-height: 1.6;
     color: var(--content-section-p-color);
+    text-shadow: 1px 1px 2px rgb(0, 0, 0, 1);
+}
+
+.content section a {
+    font-size: .9rem;
+    line-height: 1.6;
+    color: var(--content-section-p-color);
+    text-decoration: none;
+    color: rgb(255, 255, 255);
     text-shadow: 1px 1px 2px rgb(0, 0, 0, 1);
 }
 
@@ -191,12 +210,18 @@ html {
     color: var(--content-article-h3-color);
 }
 
+.content article h3 img {
+    max-width: 75%;
+}
+
 .content article li {
     font-size: .9rem;
     line-height: 1.6;
     color: var(--content-section-p-color);
     text-shadow: 1px 1px 2px rgb(0, 0, 0, 1);
 }
+
+/*****************************************************/
 
 /* Lantern effect */
 #lantern {
@@ -213,9 +238,15 @@ html {
 }
 
 /* Media query for small screens */
-@media (max-width: 768px) {
+@media (max-width: 1150px) {
     :root {
         --sidebar-h1-size: 2rem;
+        --sidebar-h2-size: 1.4rem;
+        --sidebar-p-em-size: 1.4rem;
+        --sidebar-social-media-size: 2.5rem;
+        --content-h2-size: 1.7rem;
+        --content-p-li-size: 1.2rem;
+        --content-h3-size: 1.4rem;
         --general-padding: 1.7rem;
     }
 
@@ -223,6 +254,8 @@ html {
         /*Replace flex dislpay by block display*/
         display: block;
     }
+
+    /*****************************************************/
 
     /*SideBar layout*/
     .sidebar {
@@ -241,16 +274,24 @@ html {
         font-size: var(--sidebar-h1-size);
     }
 
+    .sidebar h2 {
+        font-size: var(--sidebar-h2-size);
+    }
+
     .sidebar p,
     .sidebar em {
-        font-size: 1.4rem;
+        font-size: var(--sidebar-p-em-size);
     }
+
+    /*****************************************************/
 
     .sidebar .social-media {
         align-self: left;
         margin-top: 1%;
-        font-size: 2.5rem;
+        font-size: var(--sidebar-social-media-size);
     }
+
+    /*****************************************************/
 
     .content {
         width: 100%;
@@ -260,24 +301,24 @@ html {
     }
 
     .content section h2 {
-        font-size: 1.7rem;
+        font-size: var(--sidebar-h2-size);
+        display: flex;
+        margin-bottom: 5%;
     }
 
     .content section p,
+    .content section a,
     .content article li {
-        font-size: 1.2rem;
+        font-size: var(--content-p-li-size);
     }
 
     .content article h3 {
-        font-size: 1.4rem;
+        font-size: var(--content-h3-size);
     }
 
-    .content article li {
-        font-size: 1.2rem;
-    }
+    /*****************************************************/
 
-    #lantern
-    {
+    #lantern {
         display: none;
     }
 }
