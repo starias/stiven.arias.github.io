@@ -23,6 +23,7 @@
     /*Right Layout*/
     --content-section-h2-color: #fff;
     --content-section-p-color: #cfcfcf;
+    --content-article-h4-color: #d7b6d7;
     --content-article-h3-color: #dda0dd;
 }
 
@@ -210,6 +211,12 @@ html {
     color: var(--content-article-h3-color);
 }
 
+.content article h4 {
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+    color: var(--content-article-h4-color);
+}
+
 .content article h3 img {
     max-width: 75%;
 }
@@ -219,6 +226,34 @@ html {
     line-height: 1.6;
     color: var(--content-section-p-color);
     text-shadow: 1px 1px 2px rgb(0, 0, 0, 1);
+}
+
+/* Anchor wrapping the rectangle button */
+.rectangle-link {
+    display: block;
+    text-decoration: none; 
+    margin: 15px 0;
+    border-radius: 8px;
+    overflow: hidden; 
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+/* Article content as a clickable rectangle */
+.rectangle-link article {
+    background-color: radial-gradient(circle at center, var(--background-main-color)0%, var(--background-gradient-color)100%);
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect for rectangle link */
+.rectangle-link:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); 
+}
+
+.rectangle-link:hover article {
+    background-color: var(--background-main-color);
 }
 
 /*****************************************************/
@@ -236,6 +271,7 @@ html {
     transform: translate(-50%, -50%);
     z-index: 9999;
 }
+/*****************************************************/
 
 /* Media query for small screens */
 @media (max-width: 1150px) {
@@ -247,6 +283,7 @@ html {
         --content-h2-size: 1.7rem;
         --content-p-li-size: 1.2rem;
         --content-h3-size: 1.4rem;
+        --content-h4size: 1.25rem;
         --general-padding: 1.7rem;
     }
 
@@ -316,9 +353,17 @@ html {
         font-size: var(--content-h3-size);
     }
 
+    .content article h4 {
+        font-size: var(--content-h4-size);
+    }
+    
+
     /*****************************************************/
 
     #lantern {
         display: none;
     }
 }
+/* Media query for small screens */
+
+/*****************************************************/
