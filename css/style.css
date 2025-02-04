@@ -182,9 +182,10 @@ html {
     margin-top: 5%;
     margin-bottom: 5%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     text-align: center;
+    gap: 2%
 }
 
 .gif-style {
