@@ -46,7 +46,6 @@ html {
 /* Container layout: two equal columns */
 .container {
     display: flex;
-    /* Full viewport height */
     height: 100vh;
 }
 
@@ -100,7 +99,7 @@ html {
     border-radius: 0%;
     object-fit: cover;
     margin-bottom: 5%;
-    border: 3px solid var(--profile-pic-color); /* Optional: adds a border */
+    border: 3px solid var(--profile-pic-color);
 }
 
 /*****************************************************/
@@ -343,7 +342,7 @@ html {
 }
 /*****************************************************/
 
-/* Media query for small screens */
+/* Configuration of the resolution and sizes to be responsive on mobile screens*/
 @media (max-width: 1150px) {
     :root {
         --sidebar-h1-size: 2rem;
@@ -358,7 +357,6 @@ html {
     }
 
     .container {
-        /*Replace flex dislpay by block display*/
         display: block;
     }
 
@@ -449,6 +447,5 @@ html {
         display: none;
     }
 }
-/* Media query for small screens */
 
 /*****************************************************/
