@@ -1,0 +1,67 @@
+/* Modal styling */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    padding-top: 100px;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+  }
+  
+  /* Modal content box */
+  .modal-content {
+    background-color: #1c1b29;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    color: #ffffff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Close button */
+  .close {
+    color: #fff;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover {
+    color: #ff7f50;
+  }
+
+  .message-box {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    resize: vertical; /* allows user resizing if you want */
+    border-radius: 6px;
+    font-family: inherit;
+    background-color: #1e1d2f;
+    color: #c7fffc;
+    border: 1px solid #555;
+  }
+
+  /* Normal state */
+.send-button {
+    background-color: #ffffff; /* Light color */
+    color: #1c1b29; /* Dark text color */
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Hover effect */
+  .send-button:hover {
+    background-color: var(--hover-color); /* Change to a coral color on hover */
+    transform: scale(1.05); /* Slightly enlarge the button */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add a shadow on hover */
+  }

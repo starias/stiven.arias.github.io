@@ -86,6 +86,7 @@ html {
     margin-bottom: 2%;
     text-align: left;
     color: var(--linkable-color);
+    transition: all 0.3s ease;
 }
 
 .sidebar t_link:hover
@@ -133,9 +134,9 @@ html {
     color: var(--navigator-normal-color);
     text-decoration: none;
     font-size: .9rem;
-    transition: color 0.1s ease, padding-left 0.1s ease;
     position: relative;
     padding-left: 20px;
+    transition: color 0.3s ease, padding-left 0.1s ease;
 }
 
 /*Short line before the text when it is not highlighted*/
@@ -148,7 +149,6 @@ html {
     width: 10px;
     height: 2px;
     background-color: var(--navigator-normal-color);
-    transition: width 0.1s ease;
 }
 
 /*Long line before the text when it is highlighted*/
@@ -181,8 +181,8 @@ html {
 
 .sidebar .social-media i {
     color: var(--social-media-normal-color);
-    transition: color 0.1s ease;
     text-shadow: 5px 5px 5px rgba(0, 0, 0, 1);
+    transition: color 0.3s ease;
 }
 
 .sidebar .social-media i:hover {
@@ -285,6 +285,7 @@ html {
     text-decoration: none;
     color: var(--linkable-color);
     text-shadow: 2px 2px 2px rgb(0, 0, 0, 1);
+    transition: all 0.3s ease;
 }
 
 .content section a:hover {
