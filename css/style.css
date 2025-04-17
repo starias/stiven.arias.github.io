@@ -108,13 +108,72 @@ html {
 
 /*****************************************************/
 
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 1%;
+    margin-bottom: 5%;
+}
+
 .profile-pic {
     width: 45%; 
-    border-radius: 0%;
+    border-radius: 10%;
     object-fit: cover;
-    margin-bottom: 5%;
     border: 3px solid var(--profile-pic-color);
 }
+
+/*****************************************************/
+.social-media-rectangle {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center; 
+    padding: 10%;
+    border-radius: 10%;
+    background-color: #0000002b;
+}
+
+.sidebar .social-media {
+    display: flex;
+    flex-direction: row; 
+    gap: 5%; 
+    align-items: center;
+    font-size: 3rem;
+}
+
+.social-media.top-row {
+    display: flex;
+    gap: 20%;
+    justify-content: center;
+}
+
+.social-media.bottom-row {
+    margin-top: 20%;
+    display: flex;
+    gap: 30%;
+    justify-content: center;
+}
+
+.sidebar .social-media a {
+    margin-right: 5px;
+    text-decoration: none;
+}
+
+.sidebar .social-media i {
+    color: var(--social-media-normal-color);
+    transition: color 0.1s ease;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 1);
+}
+
+.sidebar .social-media i:hover {
+    color: var(--hover-color);
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6);
+}
+
+.icon-upwork:before {
+    content: "\e801"; 
+}
+
 
 /*****************************************************/
 
@@ -164,34 +223,6 @@ html {
 .sidebar .navigation ul li a:hover {
     color: var(--navigator-hightlighted-color);
     padding-left: 50px;
-}
-
-/*****************************************************/
-
-/* Social media icons */
-.sidebar .social-media {
-    margin-top: 20%;
-    font-size: 3rem;
-}
-
-.sidebar .social-media a {
-    margin-right: 5px;
-    text-decoration: none;
-}
-
-.sidebar .social-media i {
-    color: var(--social-media-normal-color);
-    transition: color 0.1s ease;
-    text-shadow: 5px 5px 5px rgba(0, 0, 0, 1);
-}
-
-.sidebar .social-media i:hover {
-    color: var(--hover-color);
-    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6);
-}
-
-.icon-upwork:before {
-    content: "\e801"; 
 }
 
 /*****************************************************/
@@ -426,6 +457,23 @@ html {
     }
 
     /*****************************************************/
+
+    .social-media-rectangle {
+        padding: 2%;
+    }
+
+    .social-media.top-row {
+        display: flex;
+        gap: 0%;
+        justify-content: center;
+    }
+    
+    .social-media.bottom-row {
+        margin-top: 5%;
+        display: flex;
+        gap: 10%;
+        justify-content: center;
+    }
 
     .sidebar .social-media {
         align-self: left;
