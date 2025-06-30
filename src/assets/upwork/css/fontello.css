@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'fontello';
+  src: url('../font/fontello.woff2?96242620') format('woff2'),
+       url('../font/fontello.woff?96242620') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icon-upwork::before {
+  content: '\e801';
+  font-family: 'fontello';
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

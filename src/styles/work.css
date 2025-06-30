@@ -1,0 +1,133 @@
+:root {
+  /* Font sizes */
+  --work-font-size-button: 1.2rem;
+  --work-font-size-button-mobile: 1.2rem;
+
+  /* Spacing */
+  --work-gap-desktop: 2rem;
+  --work-gap-mobile: 1rem;
+  --work-padding-button-inline: 1rem;
+  --work-padding-button-block: 0.5rem;
+  --work-padding-button-mobile-inline: 0.8rem;
+  --work-padding-button-mobile-block: 0.4rem;
+
+  /* Colors */
+  --work-color-text: #ffffff;
+  --work-color-highlight: #2fff00;
+  --work-color-hover: #6a0dad26;
+  --work-color-active: #115905;
+  --work-bg: rgba(0, 0, 0, 0.333);
+
+  /* Shadows */
+  --work-shadow: 0 0px 5px #f4f4f467;
+}
+
+/*Button Base*/
+.work-button {
+  color: var(--work-color-text);
+  text-decoration: none;
+
+  font-family: var(--font-heading);
+  font-size: var(--work-font-size-button);
+
+  text-align: center;
+  padding: var(--work-padding-button-block) var(--work-padding-button-inline);
+  border-radius: 9999px;
+
+  background-color: var(--work-bg);
+  border: 1px solid rgba(124, 61, 61, 0.2);
+  cursor: pointer;
+
+  text-shadow: 0 0 0.3px #000, 0 0 1px var(--work-color-highlight);
+  box-shadow: var(--work-shadow);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  transition: background-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
+}
+
+.work-button:hover {
+  background-color: var(--work-color-hover);
+  transform: scale(1.1);
+}
+
+/*Work Nav Bar*/
+
+.work-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--work-gap-desktop);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.work-tabs button.active {
+  background-color: var(--work-color-active);
+  border-color: var(--work-color-active);
+  color: var(--work-color-text);
+  transform: scale(1.1);
+}
+
+/*Ending Divider*/
+.work-divider {
+  width: 95%;
+  height: 2px;
+  background-color: var(--work-color-highlight);
+  margin: 4rem auto 2rem auto;
+  opacity: 0.7;
+}
+
+.work-crosslink {
+  text-align: center;
+  padding: 5rem 0rem;
+  font-family: var(--font-heading);
+}
+
+.work-crosslink-text {
+  font-size: 3rem;
+  color: var(--work-color-highlight);
+  margin-bottom: 2rem;
+}
+
+.work-crosslink-button {
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.work-crosslink-button:hover {
+  background-color: var(--work-color-active);
+}
+
+.client-overview-container {
+  padding: 0em 5em 1em;
+}
+
+/*Mobile*/
+@media (max-width: 1150px) {
+  .work-tabs {
+    gap: var(--work-gap-mobile);
+  }
+
+  .work-tabs button {
+    font-size: var(--work-font-size-button-mobile);
+    padding: var(--work-padding-button-mobile-block) var(--work-padding-button-mobile-inline);
+  }
+
+  .home-overview-container {
+    width: 80%;
+    height: auto;
+    padding: 0em 5em 1em;
+  }
+
+  .work-crosslink-button {
+    width: 60%;
+    padding: 1rem 1rem;
+    margin: 2rem;
+  }
+
+  .client-overview-container {
+    padding: 0.1em;
+  }
+}
