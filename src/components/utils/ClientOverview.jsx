@@ -9,8 +9,10 @@ import review3 from '../../assets/upwork/review2.png';
 import review4 from '../../assets/upwork/review3.png';
 import review5 from '../../assets/upwork/review4.png';
 import review6 from '../../assets/upwork/review5.png';
+import review7 from '../../assets/upwork/review6.png';
+import review8 from '../../assets/upwork/review7.png';
 
-const images = [review1, review2, review3, review4, review5, review6];
+const images = [review1, review7, review8, review2, review3, review4, review5, review6];
 
 import useImageSlider from '../../scripts/useImageSlider';
 
@@ -70,7 +72,7 @@ export default function ClientOverview() {
                         className="project-overlay"
                         onClick={() => setSelectedImage(null)}
                     >
-                        <div className="project-popup" onClick={(e) => e.stopPropagation()}>
+                        <div className="project-popup">
                             <PopUpImage
                                 image={<img src={selectedImage.src} alt="zoomed" />}
                                 onClose={() => setSelectedImage(null)}
