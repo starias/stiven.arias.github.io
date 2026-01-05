@@ -1,4 +1,7 @@
 import '../../styles/clientoverview.css';
+import PopUpImage from './PopUpImage';
+import { useState } from 'react';
+import ReactDOM from 'react-dom';
 
 import review1 from '../../assets/img/carlos-recommendation.png';
 import review2 from '../../assets/upwork/review1.png';
@@ -13,48 +16,70 @@ import useImageSlider from '../../scripts/useImageSlider';
 
 export default function ClientOverview() {
     const { currentIndex, setCurrentIndex } = useImageSlider(images, 5000);
+    const [selectedImage, setSelectedImage] = useState(null);
 
     return (
-        <div className="home-overview">
-            <h2 className="home-overview-title">What People Say About My Work?</h2>
-            <div className="home-overview-slider-wrapper">
-                <button
-                    className="home-overview-arrow left"
+        <div>
+            <div className="home-overview">
+                <h2 className="home-overview-title">What People Say About My Work?</h2>
+                <div className="home-overview-slider-wrapper">
+                    <button
+                        className="home-overview-arrow left"
 
-                    onClick={() =>
-                        setCurrentIndex((currentIndex - 1 + images.length) % images.length)
-                    }
-                >
-                   <i class="fa-solid fa-chevron-left"></i>
+                        onClick={() =>
+                            setCurrentIndex((currentIndex - 1 + images.length) % images.length)
+                        }
+                    >
+                        <i class="fa-solid fa-chevron-left"></i>
 
-                </button>
-                <div className="home-overview-slider">
-                    {
-                        images.map((img, index) => (
-                            <img
-                                key={index}
-                                className={`home-overview-img ${index === currentIndex ? 'visible' : 'hidden'}`}
-                                src={img.src}
-                                alt={`review-${index}`}
-                            />
-                        ))
-                    }
+                    </button>
+                    <div className="home-overview-slider">
+                        {
+                            images.map((img, index) => (
+                                <img
+                                    key={index}
+                                    className={`home-overview-img ${index === currentIndex ? 'visible' : 'hidden'}`}
+                                    src={img.src}
+                                    alt={`review-${index}`}
+                                    onClick={() => setSelectedImage(img)} // <-- open popup
+                                />
+                            ))
+                        }
+                    </div>
+                    <button
+                        className="home-overview-arrow right"
+                        onClick={() => setCurrentIndex((currentIndex + 1) % images.length)}
+                    >
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
                 </div>
-                <button
-                    className="home-overview-arrow right"
-                    onClick={() => setCurrentIndex((currentIndex + 1) % images.length)}
-                >
-                   <i class="fa-solid fa-chevron-right"></i>
-                </button>
+                <div className="home-overview-dots">
+                    {images.map((_, index) => (
+                        <span
+                            key={index}
+                            className={`home-overview-dot ${index === currentIndex ? 'active' : ''}`}
+                        />
+                    ))}
+                </div>
             </div>
-            <div className="home-overview-dots">
-                {images.map((_, index) => (
-                    <span
-                        key={index}
-                        className={`home-overview-dot ${index === currentIndex ? 'active' : ''}`}
-                    />
-                ))}
-            </div>
+            {
+                selectedImage &&
+                typeof document !== 'undefined' &&
+                ReactDOM.createPortal(
+                    <div
+                        className="project-overlay"
+                        onClick={() => setSelectedImage(null)}
+                    >
+                        <div className="project-popup" onClick={(e) => e.stopPropagation()}>
+                            <PopUpImage
+                                image={<img src={selectedImage.src} alt="zoomed" />}
+                                onClose={() => setSelectedImage(null)}
+                            />
+                        </div>
+                    </div>,
+                    document.body
+                )
+            }
         </div>
     );
 }
