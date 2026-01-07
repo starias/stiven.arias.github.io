@@ -12,7 +12,7 @@ export default function NavBar({ active, setActive }) {
       {showLabels && <span className="nav-label name">Stiven Arias Giraldo</span>}
 
       <nav className="nav-bar">
-        {['home', 'work', 'about'].map((section) => (
+        {['home', 'play', 'work', 'about'].map((section) => (
           <button
             key={section}
             onClick={() => setActive(section)}

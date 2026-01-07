@@ -1,0 +1,122 @@
+/* Container */
+.game-section {
+    text-align: center;
+    margin: 2rem auto;
+    max-width: 1000px;
+    padding: 1rem; /* top right bottom left */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+
+}
+
+/* Title */
+.game-title {
+    margin: 1rem;
+    font-size: 2rem;
+    color: #2fff00;
+    text-shadow: 0 0 10px #395a53;
+}
+
+.game-platform {
+  display: inline-block;
+  margin: 0.3rem auto 1.1rem auto;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.333);
+  color: #d2ffc8 !important;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 0 2px rgba(255, 255, 255, 0.925);
+  z-index: 5;
+  position: relative;
+}
+
+/* Dropdown container */
+.game-selector {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.game-selector label {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.game-selector select {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #00ff4c;
+    background-color: #1e1e2f;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.game-selector select:hover {
+    transform: scale(1.05);
+    border-color: #00ffa0;
+}
+
+/* Responsive iframe container */
+.iframe-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 70%;
+    /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.74);
+}
+
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+}
+
+
+@media (max-width: 1150px) {
+
+  .game-section {
+    max-width: 100%;
+    margin: 1.2rem auto;
+    padding: 1rem;
+  }
+
+  .game-title {
+    font-size: 1.5rem;
+    margin: 0.8rem 0 1rem 0;
+  }
+
+  .game-selector {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .game-selector label {
+    font-size: 0.9rem;
+  }
+
+  .game-selector select {
+    width: 100%;
+    max-width: 320px;
+    font-size: 0.95rem;
+  }
+
+  .iframe-container {
+    padding-bottom: 90%; 
+    border-radius: 6px;
+  }
+}

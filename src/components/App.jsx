@@ -4,6 +4,7 @@ import NavBar from './NavBar.jsx';
 import Home from './Home.jsx';
 import Work from './Work.jsx';
 import About from './About.jsx';
+import Game from './Game.jsx';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('home');
@@ -25,6 +26,7 @@ export default function App() {
           setWorkSubSection={setWorkSubSection}
           setSection={setActiveSection}
         />}
+      {activeSection === 'play' && <Game />}
     </>
   );
 }
