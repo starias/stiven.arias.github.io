@@ -32,7 +32,7 @@ export default function ClientOverview() {
                             setCurrentIndex((currentIndex - 1 + images.length) % images.length)
                         }
                     >
-                        <i class="fa-solid fa-chevron-left"></i>
+                        <i className="fa-solid fa-chevron-left"></i>
 
                     </button>
                     <div className="home-overview-slider">
@@ -52,7 +52,7 @@ export default function ClientOverview() {
                         className="home-overview-arrow right"
                         onClick={() => setCurrentIndex((currentIndex + 1) % images.length)}
                     >
-                        <i class="fa-solid fa-chevron-right"></i>
+                        <i className="fa-solid fa-chevron-right"></i>
                     </button>
                 </div>
                 <div className="home-overview-dots">
